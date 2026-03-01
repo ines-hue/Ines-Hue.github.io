@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<title> Site de Inès </title>
+	
+	<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+	<div id="entete-de-page"> 
+		<p> Site de Ines <br/> </p>
+	</div> 
+	
+	<table id="bloc-menu" border="1">
+	<tr>
+<th><a href="index.html"> Accueil </a></th>
+		<th><a href="productions.html">Productions scolaires</a></th>
+		<th><a href="passions.html">Mes passions</a></th>
+		<th><a href="videos.html">Mes vidéos</a></th>
+		<th><a href="site.html">Mon site de rêve</a></th>
+		
+		
+	</tr>
+	</table> <br/> 
+	
+	<div class="presentation">
+  <img src="avatar.png" alt="ceci est mon avatar" class="arrondie">
+
+  <div class="texte-presentation">
+    <h2>Moi c'est Inès,
+    <p>J’ai 15 ans. Je suis actuellement en classe de seconde au lycée sacré coeur à Tourcoing.
+
+Je suis une personne empathique, souriante et à l'écoute. Dans la vie, j’aime particulièrement chanter, car cela me permet de me relacher. Je suis aussi passionnée par le tennis, une activité qui m’aide à me dépasser et à me défouler.
+
+Mes qualités principales sont la rigueur, l'organisation et la patience. J’essaie toujours de m'améliorer et d'exceller, même lorsque c’est difficile.
+
+Plus tard, j’aimerais devenir notaire, car je souhaite garantir la sécurité des actes les plus importants.</p>
+			  </div>
+</div>
+			<!--on ajoute le lien où se trouve la musique -->
+
+<div>
+
+<audio  id="zic"src="music.mp3"></audio>
+<!--on nomme les boutons et leur statut -->
+<div>
+<a href="javascript:void(0)" onclick="changeState(0)" class="bouton hover">PLAY</a>
+<a href="javascript:void(0)" onclick="changeState(1)" class="bouton">PAUSE</a>
+<a href="javascript:void(0)" onclick="changeState(2)" class="bouton active">STOP</a>
+</div>
+<!--on écrit les variable du script -->
+<script>
+<!--on attribue valeur et fonction de chaque bouton -->
+function changeState(x){
+let boutons = document.querySelectorAll(".bouton");
+let audio = document.querySelector("#zic");
+for(let i =0; i<boutons.length; i++){
+boutons[i].classList.remove("active");
+}
+boutons[x].classList.add("active");
+if(x == 0){
+audio.play();
+}
+if(x == 1){
+audio.pause();
+}
+if(x == 2){
+audio.pause();
+audio.currentTime = 0;
+}
+}
+</script></div>
+		<hr>
+		<div id="infos">
+			<h3> A lire aussi: </h3>
+			<ul>
+				<li> <a href="passions.html">Mes passions</a> </li>
+				<li><a href="https://www.bing.com/ck/a?!&&p=da4e32115d1ef57178c5d2feca987b4670b766747e0bcad0bb74ede12ab501c2JmltdHM9MTc3MDA3NjgwMA&ptn=3&ver=2&hsh=4&fclid=230dceec-f183-62e8-13f3-d851f0c76307&psq=l%27histoir+du+tennis+passion+&u=a1aHR0cHM6Ly9mci53aWtpcGVkaWEub3JnL3dpa2kvSGlzdG9pcmVfZHVfdGVubmlz" target="_blank">tennisclub</a> </li>
+			</ul>
+		</div>
+	</div> <br/> 
+	
+	<div id="pied-de-page">
+		<p> Projet SNT - Dernière mise à jour : 15/12/2025 <br/>
+		Les textes et images utilisés n'engagent que son auteur : Ines </p>
+	</div> <br/> 
+
+</body>
+
+</html>
